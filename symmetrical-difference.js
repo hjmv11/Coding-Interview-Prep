@@ -16,7 +16,7 @@ function sym(...args) {
         symArray.push(args[1][k]);
       }
     }
-    k++; 
+    k++;
   }
 
   if(args.length > 2 && symArray.length > 0){
