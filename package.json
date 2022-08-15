@@ -1,0 +1,20 @@
+{
+  "name": "coding-interview-prep",
+  "version": "1.0.0",
+  "description": "All sections of Coding Interview Prep from FreeCodeCamp.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjmv11/Coding-Interview-Prep.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjmv11/Coding-Interview-Prep/issues"
+  },
+  "homepage": "https://github.com/hjmv11/Coding-Interview-Prep#readme"
+}
