@@ -24,11 +24,10 @@ function updateInventory(inventory, delivery) {
   //loop through current inventory 
   for (let i = 0; i < inventory.length; i++) {
     //loop through updated invetory 
+    //create list of updated inventory item names 
+    var updated_item_names = [];
     for (let j = 0; j < updated_inventory.length; j++) {
-      //create list of updated inventory item names 
-      var updated_item_names = [];
-      updated_item_names.push(updated_inventory[j][1]);
-      console.log(updates_item_names);
+      updated_item_names.push(updated_inventory[j][0]);
       //if current inventory item name is in updated inventory, skip, if not add to update inventory       
     }
     if (updated_item_names.indexOf(inventory[i][1]) == -1) {
@@ -37,7 +36,7 @@ function updateInventory(inventory, delivery) {
       continue;
     }
   }
-
+  console.log(updated_item_names);
   return updated_inventory;
 }
 
@@ -55,3 +54,5 @@ var newInv = [
   [67, "Bowling Ball"],
   [7, "Toothpaste"]
 ];
+
+console.log(updateInventory(curInv,newInv));

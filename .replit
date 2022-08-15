@@ -1,4 +1,4 @@
-entrypoint = "Algorithms/symmetrical-difference.js"
+entrypoint = "Algorithms/inventory-update.js"
 
 hidden = [".config"]
 
