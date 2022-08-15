@@ -2,22 +2,37 @@ function updateInventory(inventory, delivery) {
     //create updated inventory array 
     var updated_inventory = [];
 
-    //check if item in stock is in delivery 
-    for(var i in delivery){
-        for(var j in inventory){
-            var found = false;
-            if(del_item[i][1] != item[j][1]){
-                continue 
-            } else{
-                found = true;
-                updated_inventory.push([del_item[i][1], del_item[i][0]+item[j][0]])
-            }
+    //loop through delivery items 
+    for(let i=0; i < delivery.length;i++){
+      //initialize boolean if delivery item is found in current inventory
+      var del_item_found = false
+      //loop through current inventory
+      for(let j=0; j < inventory.length;j++){
+        //if the delivery item name equals the current inventory item name, add to updated_inventory
+        if(delivery[i][1] == inventory[j][1]){
+            updated_inventory.push([delivery[i][1], delivery[i][0]+inventory[j][0]]) 
+            found = true
+        } else{
+          continue
         }
-        if(!found){
-            updated_inventory.push([del_item[i][1], del_item[i][0]])
-        }
+      }
+      if(!found){
+        updated_inventory.push([delivery[i][1], delivery[i][0]])
+      }
     }
-    console.log()
+  
+  //loop through current inventory 
+  for(let i=0; i < inventory.length;i++){
+    //loop through updated invetory 
+    for(let j=0; j < updated_inventory.length; j++){
+      //if current inventory item name equals updated inventory item name, skip, if not add to update inventory 
+      if(inventory[i][1] == updated_inventory[j][1]){
+        continue
+      } else {
+        updated_inventory.push([inventory[i][1], inventory[i][0]])
+      }
+    }
+  }
     
     return updated_inventory;
 }
@@ -37,4 +52,4 @@ var newInv = [
     [7, "Toothpaste"]
 ];
 
-updateInventory(curInv, newInv);
+console.log(updateInventory(curInv, newInv));
