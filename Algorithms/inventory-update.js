@@ -1,6 +1,9 @@
 function updateInventory(inventory, delivery) {
   //create updated inventory array 
   var updated_inventory = [];
+  //create array of updated inventory item names 
+  var updated_item_names = [];
+      
 
   //loop through delivery items 
   for (let i = 0; i < delivery.length; i++) {
@@ -10,33 +13,31 @@ function updateInventory(inventory, delivery) {
     for (let j = 0; j < inventory.length; j++) {
       //if the delivery item name equals the current inventory item name, add to updated_inventory
       if (delivery[i][1] == inventory[j][1]) {
-        updated_inventory.push([delivery[i][1], delivery[i][0] + inventory[j][0]]);
-        found = true;
-      } else {
-        continue;
-      }
+        updated_inventory.push([delivery[i][0] + inventory[j][0], delivery[i][1]]);
+        updated_item_names.push(delivery[i][1]);
+        del_item_found = true;
+        break;
+      } 
     }
-    if (!found) {
-      updated_inventory.push([delivery[i][1], delivery[i][0]]);
+    if (del_item_found) {
+      continue;
+    } else {
+      updated_inventory.push([delivery[i][0], delivery[i][1]]);
+      updated_item_names.push(delivery[i][1]);
     }
   }
-
+  
   //loop through current inventory 
   for (let i = 0; i < inventory.length; i++) {
-    //loop through updated invetory 
-    //create list of updated inventory item names 
-    var updated_item_names = [];
-    for (let j = 0; j < updated_inventory.length; j++) {
-      updated_item_names.push(updated_inventory[j][0]);
-      //if current inventory item name is in updated inventory, skip, if not add to update inventory       
-    }
+    //if current inventory item name is in updated inventory, skip, if not add to update inventory  
     if (updated_item_names.indexOf(inventory[i][1]) == -1) {
-      updated_inventory.push([inventory[i][1], inventory[i][0]]);
-    } else {
+      updated_inventory.push([inventory[i][0], inventory[i][1]]);
+      updated_item_names.push(inventory[i][1]);
       continue;
     }
   }
-  console.log(updated_item_names);
+  //alphabetically sort
+  updated_inventory.sort((a,b)=>a[1].toUpperCase().localeCompare(b[1].toUpperCase()))
   return updated_inventory;
 }
 
