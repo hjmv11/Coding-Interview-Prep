@@ -1,4 +1,4 @@
-entrypoint = "Algorithms/inventory-update.js"
+entrypoint = "Algorithms/no-repeat.js"
 
 hidden = [".config"]
 
