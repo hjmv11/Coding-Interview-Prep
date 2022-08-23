@@ -12,6 +12,7 @@ function pairwise(arr, arg) {
     //copy copied array to temporary array and insert blank for element of temporary array[i]
     var temp_arr = copy_arr.slice(0)
     temp_arr.splice(i,1,'')
+    console.log(temp_arr)
     //set first numeric to the element of copied array[i]
     num1 = copy_arr[i]
     //if first numeric not the blank in copied array 
@@ -24,11 +25,12 @@ function pairwise(arr, arg) {
         if(num2 != ''){
           //if sum of numerics equal arg, push to current pairs 
           if(num1 + num2 == arg){
-            current_pairs.push([copy_arr.indexOf(num1), copy_arr.indexOf(num2)])
+            current_pairs.push([i, j])
           }  
         }
       }
     }
+    console.log(current_pairs)
     //if a pair was found for this element 
     if(current_pairs.length > 0){
       //sort current pairs and push first pair 
@@ -52,4 +54,4 @@ function pairwise(arr, arg) {
   return sum_of_indices;
 }
 
-pairwise([1, 3, 2, 4], 4);
+pairwise([1, 1, 1], 2);
