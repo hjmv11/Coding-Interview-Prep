@@ -1,17 +1,17 @@
 function pairwise(arr, arg) {
   //create numeric element variables, sum of indices, copy of array, and array with indices pairs 
-  num1 = 0
-  num2 = 0 
-  copy_arr = arr.slice(0)
-  sum_of_indices = 0
-  index_pairs = []
+  var num1
+  var num2  
+  var copy_arr = arr.slice(0)
+  var sum_of_indices = 0
+  var index_pairs = []
 
   //loop through each element of copied array 
   for(let i = 0; i < copy_arr.length; i++){
-    current_pairs = []
+    var current_pairs = []
     //if i is 0 create a temporary array with first element sliced out 
     if (i == 0){      
-      temp_arr = copy_arr.slice(0,1)
+      var temp_arr = copy_arr.slice(0,1)
       temp_arr.splice(0,0,'')
     } else {
       temp_arr = copy_arr.slice(i)
