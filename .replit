@@ -1,4 +1,4 @@
-entrypoint = "Algorithms/no-repeat.js"
+entrypoint = "Algorithms/pairwise.js"
 
 hidden = [".config"]
 
