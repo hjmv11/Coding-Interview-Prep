@@ -14,6 +14,7 @@ function pairwise(arr, arg) {
     temp_arr.splice(i,1,'')
     //set first numeric to the element of copied array[i]
     num1 = copy_arr[i]
+    //if first numeric not the blank in copied array 
     if(num1 != ''){
       //loop through temporary array 
       for(let j = 0; j < temp_arr.length; j++){
@@ -28,7 +29,6 @@ function pairwise(arr, arg) {
         }
       }
     }
-    console.log(current_pairs)
     //if a pair was found for this element 
     if(current_pairs.length > 0){
       //sort current pairs and push first pair 
