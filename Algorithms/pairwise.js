@@ -9,14 +9,9 @@ function pairwise(arr, arg) {
   //loop through each element of copied array 
   for(let i = 0; i < copy_arr.length; i++){
     var current_pairs = []
-    //if i is 0 create a temporary array with first element sliced out 
-    if (i == 0){      
-      var temp_arr = copy_arr.slice(0,1)
-      temp_arr.splice(0,0,'')
-    } else {
-      temp_arr = copy_arr.slice(i)
-      temp_arr.splice(i,0,'')
-    }
+    //copy copied array to temporary array and insert blank for element of temporary array[i]
+    var temp_arr = copy_arr.slice(0)
+    temp_arr.splice(i,1,'')
     //set first numeric to the element of copied array[i]
     num1 = copy_arr[i]
     if(num1 != ''){
@@ -33,6 +28,7 @@ function pairwise(arr, arg) {
         }
       }
     }
+    console.log(current_pairs)
     //if a pair was found for this element 
     if(current_pairs.length > 0){
       //sort current pairs and push first pair 
@@ -56,4 +52,4 @@ function pairwise(arr, arg) {
   return sum_of_indices;
 }
 
-pairwise([1,4,2,3,0,5], 7);
+pairwise([1, 3, 2, 4], 4);
