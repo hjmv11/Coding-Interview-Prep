@@ -1,4 +1,4 @@
-entrypoint = "Algorithms/pairwise.js"
+entrypoint = "Algorithms/bubble-sort.js"
 
 hidden = [".config"]
 
