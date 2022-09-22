@@ -1,4 +1,4 @@
-entrypoint = "Algorithms/selection-sort.js"
+entrypoint = "Algorithms/insertion-sort.js"
 
 hidden = [".config"]
 
