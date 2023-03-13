@@ -1,4 +1,4 @@
-entrypoint = "Algorithms/merge-sort.js"
+entrypoint = "Algorithms/binary-search.js"
 
 hidden = [".config"]
 
